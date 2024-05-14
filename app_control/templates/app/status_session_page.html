@@ -1,0 +1,21 @@
+{% extends 'base.html' %}  <!-- Supondo que você tenha um template base AdminLTE -->
+
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Status da Sessão</h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="card">
+            <div class="card-body">
+                <p>Status: {{ status_data.status }}</p> 
+                <p>Detalhes: {{ status_data.details }}</p>
+
+                <a href="{% url 'create_group' %}" class="btn btn-primary">Ir para painel</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

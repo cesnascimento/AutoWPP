@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Enviar Mensagem ao Grupo</h1>
+    </section>
+
+    <section class="content">
+        <div class="card mt-3">
+            <div class="card-header">
+                <h3 class="card-title">Escolha o Tipo de Mensagem</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" action="{% url 'send_message' group_id %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="message_type">Tipo de Mensagem:</label>
+                        <select class="form-control" id="message_type" name="message_type" onchange="toggleFields()" required>
+                            <option value="text_only">Somente Texto</option>
+                            <option value="text_with_image">Texto com Imagem</option>
+                        </select>
+                    </div>
+
+                    <!-- Campo para mensagem de texto -->
+                    <div id="text_message_fields">
+                        <div class="form-group">
+                            <label for="message">Mensagem:</label>
+                            <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Campos para imagem e legenda -->
+                    <div id="image_fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="image_path">Caminho da Imagem:</label>
+                            <input type="text" class="form-control" id="image_path" name="image_path">
+                        </div>
+                        <div class="form-group">
+                            <label for="caption">Legenda:</label>
+                            <input type="text" class="form-control" id="caption" name="caption">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    function toggleFields() {
+        var messageType = document.getElementById('message_type').value;
+        var textMessageFields = document.getElementById('text_message_fields');
+        var imageFields = document.getElementById('image_fields');
+
+        if (messageType === 'text_with_image') {
+            textMessageFields.style.display = 'none';
+            imageFields.style.display = 'block';
+        } else {
+            textMessageFields.style.display = 'block';
+            imageFields.style.display = 'none';
+        }
+    }
+</script>
+{% endblock %}

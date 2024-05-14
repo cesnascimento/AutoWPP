@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Check Connection Status</h1>
+    </section>
+    <section class="content">
+        <div class="card">
+            <div class="card-body">
+                <p>Connection Status: {{ data.status }}</p>
+                <p>Details: {{ data.details }}</p>
+                {% if data.status == False %}
+                    <p>A conexão falhou, por favor tente reconectar.</p>
+                    <a href="{% url 'start_session' %}" class="btn btn-primary">Ler QR Code Novamente</a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,572 @@
+[
+    {
+        "id": {
+            "server": "g.us",
+            "user": "120363298444128096",
+            "_serialized": "120363298444128096@g.us"
+        },
+        "labels": [],
+        "lastReceivedKey": {
+            "fromMe": false,
+            "remote": {
+                "server": "g.us",
+                "user": "120363298444128096",
+                "_serialized": "120363298444128096@g.us"
+            },
+            "id": "2388215319create1715186590",
+            "participant": {
+                "server": "c.us",
+                "user": "5521990607067",
+                "_serialized": "5521990607067@c.us"
+            },
+            "_serialized": "false_120363298444128096@g.us_2388215319create1715186590_5521990607067@c.us"
+        },
+        "t": 1715186590,
+        "unreadCount": 0,
+        "unreadDividerOffset": 0,
+        "isReadOnly": false,
+        "isAnnounceGrpRestrict": false,
+        "muteExpiration": 0,
+        "isAutoMuted": false,
+        "hasUnreadMention": false,
+        "archiveAtMentionViewedInDrawer": false,
+        "hasChatBeenOpened": false,
+        "isDeprecated": false,
+        "pendingInitialLoading": false,
+        "celebrationAnimationLastPlayed": 0,
+        "hasRequestedWelcomeMsg": false,
+        "msgs": null,
+        "kind": "group",
+        "isBroadcast": false,
+        "isGroup": true,
+        "isUser": false,
+        "contact": {
+            "id": {
+                "server": "g.us",
+                "user": "120363298444128096",
+                "_serialized": "120363298444128096@g.us"
+            },
+            "name": "Leozinho 2",
+            "type": "in",
+            "privacyMode": null,
+            "labels": [],
+            "textStatusLastUpdateTime": -1,
+            "formattedName": "Leozinho 2",
+            "isMe": false,
+            "isMyContact": false,
+            "isPSA": false,
+            "isUser": false,
+            "isWAContact": false,
+            "profilePicThumbObj": {
+                "id": {
+                    "server": "g.us",
+                    "user": "120363298444128096",
+                    "_serialized": "120363298444128096@g.us"
+                },
+                "tag": ""
+            },
+            "msgs": null
+        },
+        "groupMetadata": {
+            "id": {
+                "server": "g.us",
+                "user": "120363298444128096",
+                "_serialized": "120363298444128096@g.us"
+            },
+            "creation": 1715186590,
+            "owner": {
+                "server": "c.us",
+                "user": "5521990607067",
+                "_serialized": "5521990607067@c.us"
+            },
+            "subject": "Leozinho 2",
+            "subjectTime": 1715186590,
+            "restrict": false,
+            "announce": false,
+            "noFrequentlyForwarded": false,
+            "ephemeralDuration": 0,
+            "membershipApprovalMode": false,
+            "size": 2,
+            "support": false,
+            "suspended": false,
+            "terminated": false,
+            "uniqueShortNameMap": {},
+            "isLidAddressingMode": false,
+            "isParentGroup": false,
+            "isParentGroupClosed": false,
+            "defaultSubgroup": false,
+            "generalSubgroup": false,
+            "generalChatAutoAddDisabled": false,
+            "allowNonAdminSubGroupCreation": false,
+            "incognito": false,
+            "participants": [
+                {
+                    "id": {
+                        "server": "c.us",
+                        "user": "5521969616066",
+                        "_serialized": "5521969616066@c.us"
+                    },
+                    "isAdmin": false,
+                    "isSuperAdmin": false
+                },
+                {
+                    "id": {
+                        "server": "c.us",
+                        "user": "5521990607067",
+                        "_serialized": "5521990607067@c.us"
+                    },
+                    "isAdmin": true,
+                    "isSuperAdmin": true
+                }
+            ],
+            "pendingParticipants": [],
+            "pastParticipants": [],
+            "membershipApprovalRequests": [],
+            "subgroupSuggestions": []
+        },
+        "presence": {
+            "id": {
+                "server": "g.us",
+                "user": "120363298444128096",
+                "_serialized": "120363298444128096@g.us"
+            },
+            "chatstates": [
+                {
+                    "id": {
+                        "server": "c.us",
+                        "user": "5521990607067",
+                        "_serialized": "5521990607067@c.us"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": {
+            "server": "g.us",
+            "user": "120363277836283686",
+            "_serialized": "120363277836283686@g.us"
+        },
+        "labels": [],
+        "lastReceivedKey": {
+            "fromMe": false,
+            "remote": {
+                "server": "g.us",
+                "user": "120363277836283686",
+                "_serialized": "120363277836283686@g.us"
+            },
+            "id": "2616679289create1715186576",
+            "participant": {
+                "server": "c.us",
+                "user": "5521990607067",
+                "_serialized": "5521990607067@c.us"
+            },
+            "_serialized": "false_120363277836283686@g.us_2616679289create1715186576_5521990607067@c.us"
+        },
+        "t": 1715186576,
+        "unreadCount": 0,
+        "unreadDividerOffset": 0,
+        "isReadOnly": false,
+        "isAnnounceGrpRestrict": false,
+        "muteExpiration": 0,
+        "isAutoMuted": false,
+        "hasUnreadMention": false,
+        "archiveAtMentionViewedInDrawer": false,
+        "hasChatBeenOpened": false,
+        "isDeprecated": false,
+        "pendingInitialLoading": false,
+        "celebrationAnimationLastPlayed": 0,
+        "hasRequestedWelcomeMsg": false,
+        "msgs": null,
+        "kind": "group",
+        "isBroadcast": false,
+        "isGroup": true,
+        "isUser": false,
+        "contact": {
+            "id": {
+                "server": "g.us",
+                "user": "120363277836283686",
+                "_serialized": "120363277836283686@g.us"
+            },
+            "name": "Leozinho 1",
+            "type": "in",
+            "privacyMode": null,
+            "labels": [],
+            "textStatusLastUpdateTime": -1,
+            "formattedName": "Leozinho 1",
+            "isMe": false,
+            "isMyContact": false,
+            "isPSA": false,
+            "isUser": false,
+            "isWAContact": false,
+            "profilePicThumbObj": {
+                "id": {
+                    "server": "g.us",
+                    "user": "120363277836283686",
+                    "_serialized": "120363277836283686@g.us"
+                },
+                "tag": ""
+            },
+            "msgs": null
+        },
+        "groupMetadata": {
+            "id": {
+                "server": "g.us",
+                "user": "120363277836283686",
+                "_serialized": "120363277836283686@g.us"
+            },
+            "creation": 1715186576,
+            "owner": {
+                "server": "c.us",
+                "user": "5521990607067",
+                "_serialized": "5521990607067@c.us"
+            },
+            "subject": "Leozinho 1",
+            "subjectTime": 1715186576,
+            "restrict": false,
+            "announce": false,
+            "noFrequentlyForwarded": false,
+            "ephemeralDuration": 0,
+            "membershipApprovalMode": false,
+            "size": 2,
+            "support": false,
+            "suspended": false,
+            "terminated": false,
+            "uniqueShortNameMap": {},
+            "isLidAddressingMode": false,
+            "isParentGroup": false,
+            "isParentGroupClosed": false,
+            "defaultSubgroup": false,
+            "generalSubgroup": false,
+            "generalChatAutoAddDisabled": false,
+            "allowNonAdminSubGroupCreation": false,
+            "incognito": false,
+            "participants": [
+                {
+                    "id": {
+                        "server": "c.us",
+                        "user": "5521969616066",
+                        "_serialized": "5521969616066@c.us"
+                    },
+                    "isAdmin": false,
+                    "isSuperAdmin": false
+                },
+                {
+                    "id": {
+                        "server": "c.us",
+                        "user": "5521990607067",
+                        "_serialized": "5521990607067@c.us"
+                    },
+                    "isAdmin": true,
+                    "isSuperAdmin": true
+                }
+            ],
+            "pendingParticipants": [],
+            "pastParticipants": [],
+            "membershipApprovalRequests": [],
+            "subgroupSuggestions": []
+        },
+        "presence": {
+            "id": {
+                "server": "g.us",
+                "user": "120363277836283686",
+                "_serialized": "120363277836283686@g.us"
+            },
+            "chatstates": [
+                {
+                    "id": {
+                        "server": "c.us",
+                        "user": "5521990607067",
+                        "_serialized": "5521990607067@c.us"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": {
+            "server": "g.us",
+            "user": "120363296142385270",
+            "_serialized": "120363296142385270@g.us"
+        },
+        "labels": [],
+        "lastReceivedKey": {
+            "fromMe": false,
+            "remote": {
+                "server": "g.us",
+                "user": "120363296142385270",
+                "_serialized": "120363296142385270@g.us"
+            },
+            "id": "4202780192create1715186542",
+            "participant": {
+                "server": "c.us",
+                "user": "5521990607067",
+                "_serialized": "5521990607067@c.us"
+            },
+            "_serialized": "false_120363296142385270@g.us_4202780192create1715186542_5521990607067@c.us"
+        },
+        "t": 1715186542,
+        "unreadCount": 0,
+        "unreadDividerOffset": 0,
+        "isReadOnly": false,
+        "isAnnounceGrpRestrict": false,
+        "muteExpiration": 0,
+        "isAutoMuted": false,
+        "hasUnreadMention": false,
+        "archiveAtMentionViewedInDrawer": false,
+        "hasChatBeenOpened": false,
+        "isDeprecated": false,
+        "pendingInitialLoading": false,
+        "celebrationAnimationLastPlayed": 0,
+        "hasRequestedWelcomeMsg": false,
+        "msgs": null,
+        "kind": "group",
+        "isBroadcast": false,
+        "isGroup": true,
+        "isUser": false,
+        "contact": {
+            "id": {
+                "server": "g.us",
+                "user": "120363296142385270",
+                "_serialized": "120363296142385270@g.us"
+            },
+            "name": "Leozinho 1",
+            "type": "in",
+            "privacyMode": null,
+            "labels": [],
+            "textStatusLastUpdateTime": -1,
+            "formattedName": "Leozinho 1",
+            "isMe": false,
+            "isMyContact": false,
+            "isPSA": false,
+            "isUser": false,
+            "isWAContact": false,
+            "profilePicThumbObj": {
+                "id": {
+                    "server": "g.us",
+                    "user": "120363296142385270",
+                    "_serialized": "120363296142385270@g.us"
+                },
+                "tag": ""
+            },
+            "msgs": null
+        },
+        "groupMetadata": {
+            "id": {
+                "server": "g.us",
+                "user": "120363296142385270",
+                "_serialized": "120363296142385270@g.us"
+            },
+            "creation": 1715186542,
+            "owner": {
+                "server": "c.us",
+                "user": "5521990607067",
+                "_serialized": "5521990607067@c.us"
+            },
+            "subject": "Leozinho 1",
+            "subjectTime": 1715186542,
+            "restrict": false,
+            "announce": false,
+            "noFrequentlyForwarded": false,
+            "ephemeralDuration": 0,
+            "membershipApprovalMode": false,
+            "size": 2,
+            "support": false,
+            "suspended": false,
+            "terminated": false,
+            "uniqueShortNameMap": {},
+            "isLidAddressingMode": false,
+            "isParentGroup": false,
+            "isParentGroupClosed": false,
+            "defaultSubgroup": false,
+            "generalSubgroup": false,
+            "generalChatAutoAddDisabled": false,
+            "allowNonAdminSubGroupCreation": false,
+            "incognito": false,
+            "participants": [
+                {
+                    "id": {
+                        "server": "c.us",
+                        "user": "5521969616066",
+                        "_serialized": "5521969616066@c.us"
+                    },
+                    "isAdmin": false,
+                    "isSuperAdmin": false
+                },
+                {
+                    "id": {
+                        "server": "c.us",
+                        "user": "5521990607067",
+                        "_serialized": "5521990607067@c.us"
+                    },
+                    "isAdmin": true,
+                    "isSuperAdmin": true
+                }
+            ],
+            "pendingParticipants": [],
+            "pastParticipants": [],
+            "membershipApprovalRequests": [],
+            "subgroupSuggestions": []
+        },
+        "presence": {
+            "id": {
+                "server": "g.us",
+                "user": "120363296142385270",
+                "_serialized": "120363296142385270@g.us"
+            },
+            "chatstates": [
+                {
+                    "id": {
+                        "server": "c.us",
+                        "user": "5521990607067",
+                        "_serialized": "5521990607067@c.us"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": {
+            "server": "g.us",
+            "user": "120363276909988801",
+            "_serialized": "120363276909988801@g.us"
+        },
+        "labels": [],
+        "lastReceivedKey": {
+            "fromMe": false,
+            "remote": {
+                "server": "g.us",
+                "user": "120363276909988801",
+                "_serialized": "120363276909988801@g.us"
+            },
+            "id": "39360988381714958885",
+            "participant": {
+                "server": "c.us",
+                "user": "5521969616066",
+                "_serialized": "5521969616066@c.us"
+            },
+            "_serialized": "false_120363276909988801@g.us_39360988381714958885_5521969616066@c.us"
+        },
+        "t": 1714956433,
+        "unreadCount": 0,
+        "unreadDividerOffset": 0,
+        "isReadOnly": false,
+        "isAnnounceGrpRestrict": false,
+        "muteExpiration": 0,
+        "isAutoMuted": false,
+        "unreadMentionsOfMe": [],
+        "hasUnreadMention": false,
+        "archiveAtMentionViewedInDrawer": false,
+        "hasChatBeenOpened": false,
+        "isDeprecated": false,
+        "pendingInitialLoading": false,
+        "celebrationAnimationLastPlayed": 0,
+        "hasRequestedWelcomeMsg": false,
+        "msgs": null,
+        "kind": "group",
+        "isBroadcast": false,
+        "isGroup": true,
+        "isUser": false,
+        "contact": {
+            "id": {
+                "server": "g.us",
+                "user": "120363276909988801",
+                "_serialized": "120363276909988801@g.us"
+            },
+            "name": "Teste 1234568888",
+            "type": "in",
+            "isBusiness": false,
+            "isEnterprise": false,
+            "isSmb": false,
+            "labels": [],
+            "textStatusLastUpdateTime": -1,
+            "formattedName": "Teste 1234568888",
+            "isMe": false,
+            "isMyContact": false,
+            "isPSA": false,
+            "isUser": false,
+            "isWAContact": false,
+            "profilePicThumbObj": {
+                "eurl": null,
+                "id": {
+                    "server": "g.us",
+                    "user": "120363276909988801",
+                    "_serialized": "120363276909988801@g.us"
+                },
+                "tag": null
+            },
+            "msgs": null
+        },
+        "groupMetadata": {
+            "id": {
+                "server": "g.us",
+                "user": "120363276909988801",
+                "_serialized": "120363276909988801@g.us"
+            },
+            "creation": 1714956433,
+            "owner": {
+                "server": "c.us",
+                "user": "5521990607067",
+                "_serialized": "5521990607067@c.us"
+            },
+            "subject": "Teste 1234568888",
+            "subjectTime": 1714956433,
+            "descTime": 0,
+            "restrict": false,
+            "announce": true,
+            "noFrequentlyForwarded": false,
+            "ephemeralDuration": 0,
+            "membershipApprovalMode": false,
+            "memberAddMode": "admin_add",
+            "reportToAdminMode": false,
+            "size": 2,
+            "support": false,
+            "suspended": false,
+            "terminated": false,
+            "uniqueShortNameMap": {},
+            "isLidAddressingMode": false,
+            "isParentGroup": false,
+            "isParentGroupClosed": false,
+            "defaultSubgroup": false,
+            "generalSubgroup": false,
+            "generalChatAutoAddDisabled": false,
+            "allowNonAdminSubGroupCreation": false,
+            "lastActivityTimestamp": 0,
+            "lastSeenActivityTimestamp": 0,
+            "incognito": false,
+            "participants": [
+                {
+                    "id": {
+                        "server": "c.us",
+                        "user": "5521990607067",
+                        "_serialized": "5521990607067@c.us"
+                    },
+                    "isAdmin": true,
+                    "isSuperAdmin": true
+                }
+            ],
+            "pendingParticipants": [],
+            "pastParticipants": [
+                {
+                    "id": {
+                        "server": "c.us",
+                        "user": "5521969616066",
+                        "_serialized": "5521969616066@c.us"
+                    },
+                    "leaveTs": 1714958885,
+                    "leaveReason": "Left"
+                }
+            ],
+            "membershipApprovalRequests": [],
+            "subgroupSuggestions": []
+        },
+        "presence": {
+            "id": {
+                "server": "g.us",
+                "user": "120363276909988801",
+                "_serialized": "120363276909988801@g.us"
+            },
+            "chatstates": []
+        }
+    }
+]

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Colocar Foto no Grupo</h1>
+    </section>
+
+    <section class="content">
+        <div class="card mt-3">
+            <div class="card-header">
+                <h3 class="card-title">Atualizar Foto do Grupo</h3>
+            </div>
+            <div class="card-body">
+                <!-- Formulário para fornecer o caminho da imagem -->
+                <form method="post" action="{% url 'upload_group_photo' group_id %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="image_path">Caminho da Imagem:</label>
+                        <input type="text" class="form-control" name="image_path" id="image_path" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Atualizar Foto</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

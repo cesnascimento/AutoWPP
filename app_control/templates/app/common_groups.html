@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Criar Novo Grupo</h1>
+    </section>
+
+    <section class="content">
+        <div class="card">
+            <div class="card-body">
+                <form id="createGroupForm" method="post" action="{% url 'create_group' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="groupName">Nome do Grupo:</label>
+                        <input type="text" class="form-control" id="groupName" name="groupName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="participant0">Número do Participante:</label>
+                        <input type="text" class="form-control participant-input" id="participant0" name="participants[]" required>
+                    </div>
+
+                    <div id="additionalParticipants"></div>
+
+                    <button type="button" class="btn btn-default" onclick="addParticipant()">Adicionar Participante</button>
+                    <button type="submit" class="btn btn-success">Criar Grupo</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabela para Listar Grupos Existentes -->
+        <h2>Grupos Existentes</h2>
+        <table id="groupsTable" class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>ID</th>
+                    <th>Total de Participantes</th>
+                    <th>Link de convite</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for group in groups %}
+                <tr>
+                    <td>{{ group.name }}</td>
+                    <td>{{ group.serialized_id }}</td>
+                    <td>{{ group.total_participants }}</td>
+                    <td><a href="{{ group.invite_link }}" target="_blank">{{ group.invite_link }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+
+<script>
+    var participantIndex = 1;
+
+    // Adicionar um campo extra para participantes
+    function addParticipant() {
+        var container = document.getElementById('additionalParticipants');
+        var inputHTML = '<div class="form-group">' +
+            '<label for="participant' + participantIndex + '">Número do Participante:</label>' +
+            '<input type="text" class="form-control participant-input" id="participant' + participantIndex + '" name="participants[]" required>' +
+            '</div>';
+        container.insertAdjacentHTML('beforeend', inputHTML);
+        participantIndex++;
+    }
+</script>
+{% endblock %}

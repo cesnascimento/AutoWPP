@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>Criar Grupos</h1>
+    </section>
+
+    <section class="content">
+        <div class="card">
+            <div class="card-body">
+                <form id="createMultipleGroupsForm" method="post" action="{% url 'create_group' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="groupName0">Nome do Grupo:</label>
+                        <input type="text" class="form-control group-input" id="groupName0" name="groupNames[]" required>
+                    </div>
+
+                    <div id="additionalGroups"></div>
+
+                    <button type="button" class="btn btn-default" onclick="addGroup()">Adicionar Outro Grupo</button>
+
+                    <div class="form-group">
+                        <label for="participant0">Número do Participante:</label>
+                        <input type="text" class="form-control participant-input" id="participant0" name="participants[]" required>
+                    </div>
+
+                    <div id="additionalParticipants"></div>
+
+                    <button type="button" class="btn btn-default" onclick="addParticipant()">Adicionar Participante</button>
+                    <button type="submit" class="btn btn-success">Criar Grupos</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    var groupIndex = 1;
+    var participantIndex = 1;
+
+    function addGroup() {
+        var container = document.getElementById('additionalGroups');
+        var inputHTML = '<div class="form-group">' +
+            '<label for="groupName' + groupIndex + '">Nome do Grupo:</label>' +
+            '<input type="text" class="form-control group-input" id="groupName' + groupIndex + '" name="groupNames[]" required>' +
+            '</div>';
+        container.insertAdjacentHTML('beforeend', inputHTML);
+        groupIndex++;
+    }
+
+    function addParticipant() {
+        var container = document.getElementById('additionalParticipants');
+        var inputHTML = '<div class="form-group">' +
+            '<label for="participant' + participantIndex + '">Número do Participante:</label>' +
+            '<input type="text" class="form-control participant-input" id="participant' + participantIndex + '" name="participants[]" required>' +
+            '</div>';
+        container.insertAdjacentHTML('beforeend', inputHTML);
+        participantIndex++;
+    }
+</script>
+{% endblock %}

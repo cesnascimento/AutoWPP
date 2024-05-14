@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Criar Comunidades</h2>
+    <form method="post" id="communityForm">
+        {% csrf_token %}
+        <div id="communityFields">
+            <div class="form-group community-group">
+                <label>Nome da Comunidade:</label>
+                <input type="text" class="form-control" name="name[]" required>
+                <label>Descrição:</label>
+                <textarea class="form-control" name="description[]" rows="3" required></textarea>
+            </div>
+        </div>
+        <button type="button" class="btn btn-secondary" onclick="addCommunity()">Adicionar outra comunidade</button>
+        <button type="submit" class="btn btn-primary">Criar Comunidades</button>
+    </form>
+</div>
+<script>
+function addCommunity() {
+    let container = document.getElementById('communityFields');
+    let newCommunity = document.querySelector('.community-group').cloneNode(true);
+    newCommunity.querySelectorAll('input, textarea').forEach(input => input.value = '');
+    container.appendChild(newCommunity);
+}
+</script>
+{% endblock %}

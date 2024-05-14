@@ -1,0 +1,80 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %} 
+
+{% block logo %}
+<a href="#" class="brand-link">
+{% block logo_text %}
+<span class="brand-text font-weight-light"> AutoWPP </span>
+{% endblock logo_text %} 
+</a>
+{% endblock logo %}
+
+{% block user_panel %}
+{% endblock user_panel %}
+
+
+{%block nav_heading%} 
+Links de navegação 
+{%endblock nav_heading%}
+{% block nav_links %}
+    <li class="nav-item has-tree-view ">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa fa-user"></i> <p>Check Session</p>
+            <p><i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview menu-open">
+            <li class="nav-item">
+                <a href="{% url 'check_connection' %}" class="nav-link">
+                    <i class="nav-icon fas fa-circle"></i> Check Connection Session
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'status_session' %}" class="nav-link">
+                    <i class="nav-icon fas fa-circle"></i> Check Status Session
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item has-tree-view ">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa fa-user"></i> <p>Iniciar Session</p>
+            <p><i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview menu-open">
+            <li class="nav-item">
+                <a href="{% url 'start_session' %}" class="nav-link">
+                    <i class="nav-icon fas fa-circle"></i> Start Session
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item has-tree-view ">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa fa-user"></i> <p>Grupos</p>
+            <p><i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview menu-open">
+            <li class="nav-item">
+                <a href="{% url 'list_groups' %}" class="nav-link">
+                    <i class="nav-icon fas fa-circle"></i> Listar grupos
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item has-tree-view ">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa fa-user"></i> <p>Comunidades</p>
+            <p><i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview menu-open">
+            <li class="nav-item">
+                <a href="{% url 'create_community' %}" class="nav-link">
+                    <i class="nav-icon fas fa-circle"></i> Criar comunidade
+                </a>
+            </li>
+        </ul>
+    </li>
+{% endblock nav_links %}
