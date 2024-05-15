@@ -28,7 +28,6 @@ def generate_token(request):
 
 def check_connection_session(request):
     token = request.session.get('auth_token')
-    print(token)
     if not token:
         return render(request, 'error_page.html', {'message': 'No authentication token found'})
 
@@ -86,7 +85,6 @@ def start_session(request):
             qr_code_base64 = qr_code_base64.split("base64,")[-1]
             check_connection = check_connection_session(request)
             status_connection = status_session(request)
-            print(status_connection.text)
             return render(request, 'app/qrcode_page.html', {'qr_code_base64': qr_code_base64})
         else:
             return render(request, 'adminlte_error.html', {'error': 'QR code data not found'})
@@ -118,9 +116,9 @@ def create_group_view(request):
 
             response = requests.post(url, json=data, headers=headers)
             if response.status_code == 201:
-                print(f'Grupo "{group_name}" criado com sucesso')
+                pass
             else:
-                print(f'Falha ao criar o grupo "{group_name}" - Status: {response.status_code}')
+                pass
 
             time.sleep(13)
 
@@ -160,7 +158,6 @@ def all_groups_view(request):
                 'groupId': f'{serialized_id}'  # Atribua "true" para obter apenas grupos
             }
             invite_response = requests.get(invite_link_url, headers=headers, data=data)
-            print(invite_response.text)
 
             invite_link = ''
             if invite_response.status_code == 200:
@@ -304,7 +301,6 @@ def generate_invite_link_ajax(request, group_id):
 
     response = requests.get(url, headers=headers, data=data)
     response2 = requests.get(url2, headers=headers, data=data)
-    print('aquii',response2.text)
 
     if response.status_code == 200:
         invite_link = response.json().get('response', '')
@@ -363,7 +359,6 @@ def send_message_view(request, group_id):
 
         if message_type == 'text_only':
             url = f'http://localhost:21465/api/{session_id}/send-message'
-            print('grupo', group_id)
             data = {
                 'phone': f'{group_id}@g.us',
                 'isGroup': 'true',
@@ -384,7 +379,6 @@ def send_message_view(request, group_id):
             return JsonResponse({'error': 'Tipo de mensagem inválido'}, status=400)
 
         response = requests.post(url, json=data, headers=headers)
-        print(response.text, response.url)
 
         if response.status_code == 201:
             return JsonResponse({'message': 'Mensagem enviada com sucesso!'})
