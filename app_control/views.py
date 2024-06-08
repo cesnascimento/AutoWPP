@@ -77,6 +77,7 @@ def start_session(request):
 
     url_qr_code = "http://localhost:21465/api/mySession/start-session"
     response = requests.post(url_qr_code, headers=headers)
+    time.sleep(7)
 
     if response.status_code == 200:
         start_session_data = response.json()
@@ -89,7 +90,7 @@ def start_session(request):
         else:
             return render(request, 'adminlte_error.html', {'error': 'QR code data not found'})
     else:
-        return render(request, 'adminlte_error.html', {'error': 'Failed to retrieve QR code data'})
+        return redirect('status_session')
 
 
 @csrf_exempt
