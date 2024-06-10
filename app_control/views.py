@@ -196,7 +196,6 @@ def list_groups_view(request):
     group_names = {}
 
     for group in response:
-        print(group)
         group_metadata = group.get('groupMetadata', {})
         group_name = group_metadata.get('subject', '')
 
