@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomePageView, add_people_to_group_view, all_groups_view, check_connection_session, create_community_view, generate_invite_link_ajax, generate_token, list_groups_view, send_message_view, start_session, submit_add_people_to_group_view, upload_group_photo_view, view_status_session, create_group_view
+from .views import HomePageView, add_people_to_group_view, all_groups_view, check_connection_session, create_community_view, generate_invite_link_ajax, generate_token, get_contact_community_view, list_groups_view, send_message_view, start_session, submit_add_people_to_group_view, upload_group_photo_view, view_status_session, create_group_view
 
 
 urlpatterns = [
@@ -16,5 +16,7 @@ urlpatterns = [
     path('group/<slug:group_id>/ajax-invite-link/', generate_invite_link_ajax, name='generate_invite_link_ajax'),
     path('group/<slug:group_id>/upload-photo/', upload_group_photo_view, name='upload_group_photo'),
     path('group/<slug:group_id>/send-message/', send_message_view, name='send_message'),
+    #path('group/<slug:group_id>/get_participants/', get_contact_community_view, name='get_contact_community'),
+    path('group/get-contact-community/<slug:group_id>/', get_contact_community_view, name='get_contact_community'),
     path('create-community/', create_community_view, name='create_community'),
 ]

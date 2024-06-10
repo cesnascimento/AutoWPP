@@ -7,6 +7,8 @@ import requests
 from django.views.decorators.csrf import csrf_exempt
 import json
 import logging
+import csv
+from io import StringIO
 
 logger = logging.getLogger(__name__)
 
@@ -77,7 +79,6 @@ def start_session(request):
 
     url_qr_code = "http://localhost:21465/api/mySession/start-session"
     response = requests.post(url_qr_code, headers=headers)
-    time.sleep(7)
 
     if response.status_code == 200:
         start_session_data = response.json()
@@ -154,7 +155,7 @@ def all_groups_view(request):
 
             serialized_id = group_id_info.get('user', '')
 
-            invite_link_url = f'http://localhost:21465/api/mySession/group-invite-link/120363276909988801'
+            invite_link_url = f'http://localhost:21465/api/mySession/group-invite-link/{serialized_id}'
             data = {
                 'groupId': f'{serialized_id}'  # Atribua "true" para obter apenas grupos
             }
@@ -195,6 +196,7 @@ def list_groups_view(request):
     group_names = {}
 
     for group in response:
+        print(group)
         group_metadata = group.get('groupMetadata', {})
         group_name = group_metadata.get('subject', '')
 
@@ -244,11 +246,11 @@ def add_people_to_group_view(request, group_id):
                     continue
 
                 seen_names.add(formatted_name)
-
-                filtered_contacts.append({
-                    'id': contact['id']['user'],
-                    'formattedName': formatted_name
-                })
+                if contact['id']['server'] == 'c.us':
+                    filtered_contacts.append({
+                        'id': contact['id']['user'],
+                        'formattedName': formatted_name
+                    })
 
         return render(request, 'app/add_people_to_group.html', {'contacts': filtered_contacts, 'group_id': group_id})
     else:
@@ -264,6 +266,7 @@ def submit_add_people_to_group_view(request, group_id):
             return JsonResponse({'error': 'Token de autenticação não encontrado'}, status=401)
 
         contacts = request.POST.getlist('contacts[]')
+        print(contacts)
         url = f'http://localhost:21465/api/{session_id}/add-participant-group'
         headers = {
             'Authorization': f'Bearer {token}',
@@ -359,6 +362,7 @@ def send_message_view(request, group_id):
         }
 
         if message_type == 'text_only':
+            
             url = f'http://localhost:21465/api/{session_id}/send-message'
             data = {
                 'phone': f'{group_id}@g.us',
@@ -424,6 +428,29 @@ def create_community_view(request):
 
     return render(request, 'app/create_community_form.html')
 
+def get_contact_community_view(request, group_id):
+    token = request.session.get('auth_token')
+    headers = {
+        'Authorization': f'Bearer {token}',
+    }
+    data = {
+                'groupId': group_id,
+            }
+    session_id = 'mySession'
+    url = f'http://localhost:21465/api/{session_id}/group-members-ids/{group_id}'
+    response = requests.get(url, data=data, headers=headers)
+    data = response.json()
+    if response.status_code == 200:
+        serialized_values = [item['_serialized'] for item in data['response']]
 
-def get_contact_community(request):
-    pass
+        csv_buffer = StringIO()
+        csv_writer = csv.writer(csv_buffer)
+
+        csv_writer.writerow(['_serialized'])
+        for value in serialized_values:
+            csv_writer.writerow([value])
+
+        response = HttpResponse(csv_buffer.getvalue(), content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename=participantes.csv'
+
+        return response
