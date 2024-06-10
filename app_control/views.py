@@ -265,7 +265,6 @@ def submit_add_people_to_group_view(request, group_id):
             return JsonResponse({'error': 'Token de autenticação não encontrado'}, status=401)
 
         contacts = request.POST.getlist('contacts[]')
-        print(contacts)
         url = f'http://localhost:21465/api/{session_id}/add-participant-group'
         headers = {
             'Authorization': f'Bearer {token}',
