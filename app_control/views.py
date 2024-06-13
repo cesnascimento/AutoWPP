@@ -5,10 +5,10 @@ from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
 import requests
 from django.views.decorators.csrf import csrf_exempt
-import json
 import logging
 import csv
 from io import StringIO
+from django.core.paginator import Paginator
 
 logger = logging.getLogger(__name__)
 
@@ -190,8 +190,11 @@ def list_groups_view(request):
         'Content-Type': 'application/json'
     }
 
-    payload = {"onlyGroups": True}
+    payload = {"onlyGroups": True, "count": 10,}
+    page = request.GET.get('page', 1)
     response = requests.post(url, json=payload, headers=headers).json()
+    paginator = Paginator(response, 20)  # 20 grupos por página
+    groups_page = paginator.get_page(page)
     groups = []
     group_names = {}
 
@@ -214,7 +217,7 @@ def list_groups_view(request):
 
     groups = list(group_names.values())
 
-    return render(request, 'app/list_groups.html', {'groups': groups})
+    return render(request, 'app/list_groups.html', {'groups': groups, 'page': groups_page})
 
 
 def add_people_to_group_view(request, group_id):
