@@ -15,6 +15,7 @@
             </div>
             <div class="card-body">
                 <a href="{% url 'create_group' %}" class="btn btn-primary">Criar grupo</a>
+                <a id="loadMore" class="btn btn-secondary" href="?page={{ groups.next_page_number }}">Carregar mais grupos</a>
                 <table class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
@@ -62,6 +63,7 @@
             </div>
         </div>
         <a href="{% url 'create_group' %}" class="btn btn-primary">Criar grupo</a>
+        <a id="loadMore" class="btn btn-secondary" href="?page={{ groups.next_page_number }}">Carregar mais grupos</a>
     </section>
 </div>
 <script>
@@ -91,6 +93,28 @@
 
         return false;
     }
+</script>
+<script>
+    document.getElementById('loadMore').addEventListener('click', function(e) {
+        e.preventDefault();
+        const nextPageUrl = this.getAttribute('href');
+        
+        fetch(nextPageUrl)
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const newRows = doc.querySelectorAll('tbody tr');
+                document.querySelector('tbody').append(...newRows);
+                // Atualizar o link para a próxima página
+                if (doc.querySelector('#loadMore')) {
+                    this.setAttribute('href', doc.querySelector('#loadMore').getAttribute('href'));
+                } else {
+                    this.remove(); // Remove o botão se não houver mais páginas
+                }
+            })
+            .catch(error => console.error('Error loading more groups:', error));
+    });
 </script>
 {% endblock %}
 
