@@ -181,6 +181,9 @@ def list_groups_view(request):
     token = request.session.get('auth_token')
     session_id = 'mySession'
 
+    # Dicionário para manter o máximo número de participantes de cada grupo.
+    max_participants = request.session.get('max_participants', {})
+
     if not token:
         return JsonResponse({'error': 'Token de autenticação não encontrado'}, status=401)
 
@@ -190,30 +193,36 @@ def list_groups_view(request):
         'Content-Type': 'application/json'
     }
 
-    payload = {"onlyGroups": True, "count": 10,}
+    payload = {"onlyGroups": True, "count": 30,}
     page = request.GET.get('page', 1)
     response = requests.post(url, json=payload, headers=headers).json()
-    paginator = Paginator(response, 20)  # 20 grupos por página
+    paginator = Paginator(response, 20)
     groups_page = paginator.get_page(page)
-    groups = []
     group_names = {}
 
     for group in response:
         group_metadata = group.get('groupMetadata', {})
         group_name = group_metadata.get('subject', '')
+        current_participants_count = len(group_metadata.get('participants', []))
+
+        max_count = max_participants.get(group_name, 0)
+
+        if current_participants_count > max_count:
+            max_participants[group_name] = current_participants_count
+            max_count = current_participants_count
 
         group_info = {
             'id': group_metadata.get('id', {}).get('user', ''),
             'serialized': group_metadata.get('id', {}).get('_serialized', ''),
             'name': group_name,
-            'participants_count': len(group_metadata.get('participants', [])),
+            'participants_count': current_participants_count,
+            'max_participants_count': max_count,
             'is_announce': group_metadata.get('announce', False)
         }
 
-        if group_name in group_names:
-            group_names[group_name] = group_info
-        else:
-            group_names[group_name] = group_info
+        group_names[group_name] = group_info
+
+    request.session['max_participants'] = max_participants
 
     groups = list(group_names.values())
 

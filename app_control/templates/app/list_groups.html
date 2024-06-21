@@ -21,7 +21,8 @@
                         <tr>
                             <th>ID</th>
                             <th>Nome</th>
-                            <th>Número de Participantes</th>
+                            <th>Número Atual de Participantes</th>
+                            <th>Número Maximo de Participantes</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -31,6 +32,7 @@
                             <td>{{ group.id }}</td>
                             <td>{{ group.name }}</td>
                             <td>{{ group.participants_count }}</td>
+                            <td>{{ group.max_participants_count }}</td>
                             <td>
                                 <a href="{% url 'add_people_to_group' group.id %}"  title="Adicionar Pessoas">
                                     <i class="fas fa-user-plus mr-2"></i>
